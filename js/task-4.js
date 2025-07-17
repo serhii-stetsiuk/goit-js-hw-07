@@ -5,7 +5,12 @@ formElem.addEventListener('submit', e => {
 	const formData = new FormData(formElem);
 	let userInfo = {};
 	if (formElem.email.value.length === 0 || formElem.password.value.length === 0) { alert('All form fields must be filled in'); return; }  else
-	{ userInfo = Object.fromEntries(formData.entries())}; 
-
+	{
+		userInfo = {
+			email: formData.get('email'),
+			password: formData.get('password').trim()
+		}
+	};
+	console.log(userInfo);
 	formElem.reset();
 })
