@@ -7,7 +7,7 @@ formElem.addEventListener('submit', e => {
 	if (formElem.email.value.length === 0 || formElem.password.value.length === 0) { alert('All form fields must be filled in'); return; }  else
 	{
 		userInfo = {
-			email: formData.get('email'),
+			email: formData.get('email').trim(),
 			password: formData.get('password').trim()
 		}
 	};
